@@ -1,0 +1,41 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "cf-ai-moq-video-grid",
+	"main": "src/server/index.ts",
+	"compatibility_date": "2025-08-03",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"ai": {
+		"binding": "AI"
+	},
+	"r2_buckets": [
+		{
+			"binding": "VIDEOS",
+			"bucket_name": "moq-videos"
+		},
+		{
+			"bucket_name": "moq-videos",
+			"binding": "moq_videos"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "VIDEO_METADATA",
+				"class_name": "VideoMetadata"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_sqlite_classes": [
+				"VideoMetadata"
+			]
+		}
+	],
+	"assets": {
+		"not_found_handling": "single-page-application"
+	}
+}
