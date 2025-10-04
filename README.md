@@ -1,5 +1,7 @@
 # Video Grid + Subtitles
 
+Live demo: https://cf-ai-moq-video-grid.reddygtvs.workers.dev/
+
 AI-powered video grid with automatic subtitle generation using Cloudflare Workers AI.
 
 Upload videos, get AI-generated subtitles, browse in grid view, watch with synchronized captions.
